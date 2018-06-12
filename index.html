@@ -1,17 +1,30 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <title>
+    Cytonn Tutorials
+  </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+  </head>
 <body>
 
 <canvas id="myCanvas" width="200" height="100" style="border:1px solid #d3d3d3;">
 Your browser does not support the HTML5 canvas tag.</canvas>
-
+<button onclick="getCurrentLocation()"id="btn-location" class="btn btn-primary">Get Your Current Location</button>
+<img src="https://avatars2.githubusercontent.com/u/5557095?s=460&v=4" height="50px" width="50px"/>
 <script>
 var c = document.getElementById("myCanvas");
 var ctx = c.getContext("2d");
 ctx.beginPath();
 ctx.arc(95,50,40,0,2*Math.PI);
 ctx.stroke();
-</script> 
-
+function getCurrentLocation(){
+ navigator.geolocation.getCurrentPosition(showLocation);
+}
+function showLocation(locationData){
+  alert("You are located at latitude"+ locationData.coords.latitude + "longitude " +locationData.coords.longitude)
+}
+</script>
 </body>
+
 </html>
