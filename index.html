@@ -6,13 +6,90 @@
   </title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
   </head>
-<body>
+  <style>
+.button{
+  background-color:#777990;
+}
+/*.appNav{
+  position: relative;
+  height: 100%;
+  background-color: blue;
+  width: 100%;
+  margin-top:0%;
+}*/
+.appcontent{
+  position: relative;
+  margin-left: 0 auto;
 
+}
+.registrationform input{
+  margin: 0 auto;
+  margin-bottom: 1%;
+  display: block;
+  width: 50%;
+
+}
+.registrationform button{
+  display: block;
+  margin: 0 auto;
+  width: 50%;
+}
+
+
+.button:hover{
+  background-color: yellow;
+}
+.map {
+  margin: 0 auto;
+  position: relative;
+  margin-top: 1%;
+  width: 50%;
+}
+.registrationform #googleMap{
+  height: 200px;
+  width: 100%;
+}
+.registrationform .video{
+margin: 0 auto;
+width: 50%;
+height: 30%;
+
+}
+
+  </style>
+<body>
+<div class="appcontent">
+<form class="registrationform">
+<input placeholder="Enter your name" type="text" name="username" id="usernametxt"/>
+<input placeholder="Enter password" type="password" name="password" id="passwordtxt"/>
+<input placeholder="Enter your location" type="text" name="location" />
+<button class="button" id="photoBtn" onclick="takePhoto()" type="button">Take Photo</button>
+<div class="video">
+<video id="video" width="100%" autoplay></video>
+</div>
+<div class="map">
+<div id="googleMap">
+</div>
+</div>
+<button class="button" type="submit">submit</button>
+</form>
+
+
+<!-- <div>
+<input type="text"/>
+</div> -->
+</div>
 <canvas id="myCanvas" width="200" height="100" style="border:1px solid #d3d3d3;">
 Your browser does not support the HTML5 canvas tag.</canvas>
 <button onclick="getCurrentLocation()"id="btn-location" class="btn btn-primary">Get Your Current Location</button>
+<button onclick="createBackgroundProcess()">
+
 <img src="https://avatars2.githubusercontent.com/u/5557095?s=460&v=4" height="50px" width="50px"/>
+</div>
+<script src="https://maps.googleapis.com/maps/api/js"></script>
+<script src="app.js"></script>
 <script>
+
 var c = document.getElementById("myCanvas");
 var ctx = c.getContext("2d");
 ctx.beginPath();
@@ -22,9 +99,40 @@ function getCurrentLocation(){
  navigator.geolocation.getCurrentPosition(showLocation);
 }
 function showLocation(locationData){
-  alert("You are located at latitude"+ locationData.coords.latitude + "longitude " +locationData.coords.longitude)
+  var mapProp= {
+    center:new google.maps.LatLng(locationData.coords.latitude,locationData.coords.longitude),
+    zoom:5,
+};
+var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+}
+
+function takePhoto(){
+  let video=document.getElementById('video');
+    if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+    // Not adding `{ audio: true }` since we only want video now
+    navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) {
+        video.src = window.URL.createObjectURL(stream);
+        video.play();
+    });
+
+  }
+  else if(navigator.getUserMedia) { // Standard
+    navigator.getUserMedia({ video: true }, function(stream) {
+        video.src = stream;
+        video.play();
+    }, errBack);
+} else if(navigator.webkitGetUserMedia) { // WebKit-prefixed
+    navigator.webkitGetUserMedia({ video: true }, function(stream){
+        video.src = window.webkitURL.createObjectURL(stream);
+        video.play();
+    }, errBack);
+} else if(navigator.mozGetUserMedia) { // Mozilla-prefixed
+    navigator.mozGetUserMedia({ video: true }, function(stream){
+        video.src = window.URL.createObjectURL(stream);
+        video.play();
+    }, errBack);
+}
 }
 </script>
 </body>
-
 </html>
