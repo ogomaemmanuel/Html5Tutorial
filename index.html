@@ -4,6 +4,7 @@
   <title>
     Cytonn Tutorials
   </title>
+  <link rel="stylesheet" href="app.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
   </head>
   <style>
@@ -37,6 +38,7 @@
 
 
 .button:hover{
+  transition: 0.9s;
   background-color: yellow;
 }
 .map {
@@ -45,6 +47,10 @@
   margin-top: 1%;
   width: 50%;
 }
+.map:hover{
+  transform: rotate(20deg);
+}
+
 .registrationform #googleMap{
   height: 200px;
   width: 100%;
@@ -58,6 +64,7 @@ height: 30%;
 
   </style>
 <body>
+  <div class="appnav"></div>
 <div class="appcontent">
 <form class="registrationform">
 <input placeholder="Enter your name" type="text" name="username" id="usernametxt"/>
@@ -67,21 +74,16 @@ height: 30%;
 <div class="video">
 <video id="video" width="100%" autoplay></video>
 </div>
+<button type="button" onclick="getCurrentLocation()"id="btn-location">Get Your Current Location</button>
 <div class="map">
 <div id="googleMap">
 </div>
 </div>
 <button class="button" type="submit">submit</button>
 </form>
-
-
-<!-- <div>
-<input type="text"/>
-</div> -->
 </div>
-<canvas id="myCanvas" width="200" height="100" style="border:1px solid #d3d3d3;">
-Your browser does not support the HTML5 canvas tag.</canvas>
-<button onclick="getCurrentLocation()"id="btn-location" class="btn btn-primary">Get Your Current Location</button>
+
+
 <button onclick="createBackgroundProcess()">
 
 <img src="https://avatars2.githubusercontent.com/u/5557095?s=460&v=4" height="50px" width="50px"/>
@@ -89,12 +91,6 @@ Your browser does not support the HTML5 canvas tag.</canvas>
 <script src="https://maps.googleapis.com/maps/api/js"></script>
 <script src="app.js"></script>
 <script>
-
-var c = document.getElementById("myCanvas");
-var ctx = c.getContext("2d");
-ctx.beginPath();
-ctx.arc(95,50,40,0,2*Math.PI);
-ctx.stroke();
 function getCurrentLocation(){
  navigator.geolocation.getCurrentPosition(showLocation);
 }
@@ -132,6 +128,9 @@ function takePhoto(){
         video.play();
     }, errBack);
 }
+}
+function storeUserData(){
+  
 }
 </script>
 </body>

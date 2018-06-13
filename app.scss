@@ -1,0 +1,22 @@
+
+$contentColor: #656345;
+$bodyColor: #456773;
+body{
+  background-color: $bodyColor;
+  .appcontent{
+
+    background-color: $contentColor;
+button{
+  border-radius: 3*4;
+  border-bottom: Blue;
+  border-width: thick;
+}
+  }
+appNav{
+  background-color: blue;
+  width: 100%;
+  height: 20%;
+  position: relative;
+
+}
+}
