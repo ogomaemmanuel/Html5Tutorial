@@ -12,6 +12,7 @@
 </head>
 
 <body>
+  <!-- foundation navigation -->
   <nav class="top-bar" data-topbar role="navigation">
     <div class="row">
       <div class="columns">
@@ -34,6 +35,7 @@
       </div>
     </div>
   </nav>
+  <!-- foundation grid -->
   <div grid-x>
     <div class="medium-6 large-3 small-12">
 
@@ -43,47 +45,48 @@
     <div class="grid-x">
       <div class="medium-6 large-3 small-12 cell">
         <h4>Add Product</h4>
+        <!-- foundation form -->
         <form>
-        <div class="grid-x grid-padding-x">
-          
-          <div class="medium-12 cell">
-            <label>Product Name
-              <input type="text" placeholder="Enter product name">
-            </label>
-          </div>
-          <div class="medium-12 cell">
-            <label>Price
-              <input type="number" placeholder="Enter item price">
-            </label>
-          </div>
+          <div class="grid-x grid-padding-x">
 
-          <div class="medium-12 cell">
-            <label>Quantity
-              <input type="number" placeholder="Enter quanity">
-            </label>
-          </div>
-          <div class="medium-12 cell">
-            <label>Category
-              <select>
-                <option value="husker">Electronic</option>
-                <option value="starbuck">Clothing</option>
-                <option value="hotdog">Furniture</option>
-              </select>
-            </label>
-          </div>
+            <div class="medium-12 cell">
+              <label>Product Name
+                <input type="text" placeholder="Enter product name">
+              </label>
+            </div>
+            <div class="medium-12 cell">
+              <label>Price
+                <input type="number" placeholder="Enter item price">
+              </label>
+            </div>
+
+            <div class="medium-12 cell">
+              <label>Quantity
+                <input type="number" placeholder="Enter quanity">
+              </label>
+            </div>
+            <div class="medium-12 cell">
+              <label>Category
+                <select>
+                  <option value="husker">Electronic</option>
+                  <option value="starbuck">Clothing</option>
+                  <option value="hotdog">Furniture</option>
+                </select>
+              </label>
+            </div>
 
 
-          <div class="medium-12 cell">
-            <button type="submit" class="success button expanded">Save</button>
+            <div class="medium-12 cell">
+              <button type="submit" class="success button expanded">Save</button>
+            </div>
+
           </div>
-        
-        </div>
-      </form>
+        </form>
 
       </div>
       <div class="medium-6 large-9 small-12 cell">
         <h4>Available Products</h4>
-
+        <!-- foundation table table -->
         <table>
           <thead>
             <tr>
@@ -164,12 +167,13 @@
     </div>
 
   </div>
+  <!-- modal -->
   <div class="reveal" id="productEditModal" data-reveal>
-      <div class="grid-container">
-          <div class="grid-x">
-      <form>
+    <div class="grid-container">
+      <div class="grid-x">
+        <form>
           <div class="grid-x grid-padding-x">
-            
+
             <div class="medium-12 cell">
               <label>Product Name
                 <input type="text" placeholder="Enter product name">
@@ -180,7 +184,7 @@
                 <input type="number" placeholder="Enter item price">
               </label>
             </div>
-  
+
             <div class="medium-12 cell">
               <label>Quantity
                 <input type="number" placeholder="Enter quanity">
@@ -195,22 +199,23 @@
                 </select>
               </label>
             </div>
-  
-  
+
+
             <div class="medium-12 cell">
               <button type="submit" class="success button expanded">Save</button>
             </div>
-          
+
           </div>
         </form>
-          </div>
-          </div>
+      </div>
+    </div>
   </div>
 
   <div class="reveal" id="productDetailModal" data-reveal>
-    <h1>Awesome. I Have It.</h1>
-    <p class="lead">Your couch. It is mine.</p>
-    <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
+    <h1>Product Details</h1>
+    <p class="lead">Product Name: Sony Xperia</p>
+    <p class="lead">Price: 700000</p>
+    <p>Quanity: 90</p>
     <button class="close-button" data-close aria-label="Close modal" type="button">
       <span aria-hidden="true">&times;</span>
     </button>
