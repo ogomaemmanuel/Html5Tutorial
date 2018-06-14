@@ -4,8 +4,18 @@ $bodyColor: #456773;
 body{
   background-color: $bodyColor;
   .appcontent{
-
-    background-color: $contentColor;
+    .appmenu{
+      margin: 0 auto;
+      position: relative;
+    }
+    .menu{
+      background-color: blue !important;
+    }
+    .cytonn-green{
+      margin: 0 auto;
+      width: 100px;
+    }
+    background-color: yellow;
 button{
   border-radius: 3*4;
   border-bottom: Blue;
@@ -19,4 +29,5 @@ appNav{
   position: relative;
 
 }
+
 }

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Foundation Template</title>
+  <meta name="viewport" content="width = device-width, initial-scale = 1">
+  <link rel="stylesheet" href="node_modules/foundation-sites/dist/css/foundation.css">
+  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="node_modules/foundation-sites/dist/js/foundation.js"></script>
+  <link rel="stylesheet" href="foundation-icons/foundation-icons.css">
+
+</head>
+
+<body>
+  <nav class="top-bar" data-topbar role="navigation">
+    <div class="row">
+      <div class="columns">
+        <ul class="menu expanded icons">
+          <li>
+            <a href="#">
+              <i class="fi-home"></i>Home</a>
+          </li>
+          <li>
+            <a href="#">About</a>
+          </li>
+          <li>
+            <a href="#">Service</a>
+          </li>
+          <li>
+            <a href="#">Contact</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div grid-x>
+    <div class="medium-6 large-3 small-12">
+
+    </div>
+  </div>
+  <div class="grid-container">
+    <div class="grid-x">
+      <div class="medium-6 large-3 small-12 cell">
+        <h4>Add Product</h4>
+        <form>
+        <div class="grid-x grid-padding-x">
+          
+          <div class="medium-12 cell">
+            <label>Product Name
+              <input type="text" placeholder="Enter product name">
+            </label>
+          </div>
+          <div class="medium-12 cell">
+            <label>Price
+              <input type="number" placeholder="Enter item price">
+            </label>
+          </div>
+
+          <div class="medium-12 cell">
+            <label>Quantity
+              <input type="number" placeholder="Enter quanity">
+            </label>
+          </div>
+          <div class="medium-12 cell">
+            <label>Category
+              <select>
+                <option value="husker">Electronic</option>
+                <option value="starbuck">Clothing</option>
+                <option value="hotdog">Furniture</option>
+              </select>
+            </label>
+          </div>
+
+
+          <div class="medium-12 cell">
+            <button type="submit" class="success button expanded">Save</button>
+          </div>
+        
+        </div>
+      </form>
+
+      </div>
+      <div class="medium-6 large-9 small-12 cell">
+        <h4>Available Products</h4>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Product Name</th>
+              <th>Price</th>
+              <th>Quantity Available</th>
+              <th>Details</th>
+              <th>Edit</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Samsung Tv </td>
+              <td>Ksh 3000</td>
+              <td>70</td>
+              <td>
+                <button data-open="productDetailModal" class="button">
+                  <i class="fi-eye"></i>
+                </button>
+              </td>
+              <td>
+                <button data-open="productEditModal" class="button">
+                  <i class="fi-pencil"></i>
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>Apple Iphone</td>
+              <td>Ksh 1000</td>
+              <td>80</td>
+              <td>
+                <button data-open="productDetailModal" class="button">
+                  <i class="fi-eye"></i>
+                </button>
+              </td>
+              <td>
+                <button data-open="productEditModal" class="button">
+                  <i class="fi-pencil"></i>
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>Iron Box</td>
+              <td>Ksh 1200</td>
+              <td>4000</td>
+              <td>
+                <button data-open="productDetailModal" class="button">
+                  <i class="fi-eye"></i>
+                </button>
+              </td>
+              <td>
+                <button data-open="productEditModal" class="button">
+                  <i class="fi-pencil"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <ul class="pagination text-center">
+          <li class="pagination-previous disabled">Previous
+            <span class="show-for-sr">page</span>
+          </li>
+          <li class="current">
+            <span class="show-for-sr">You're on page</span> 1</li>
+          <li>
+            <a href="#" aria-label="Page 2">2</a>
+          </li>
+          <li>
+            <a href="#" aria-label="Page 3">3</a>
+          </li>
+          <li class="pagination-next">
+            <a href="#" aria-label="Next page">Next
+              <span class="show-for-sr">page</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+  <div class="reveal" id="productEditModal" data-reveal>
+      <div class="grid-container">
+          <div class="grid-x">
+      <form>
+          <div class="grid-x grid-padding-x">
+            
+            <div class="medium-12 cell">
+              <label>Product Name
+                <input type="text" placeholder="Enter product name">
+              </label>
+            </div>
+            <div class="medium-12 cell">
+              <label>Price
+                <input type="number" placeholder="Enter item price">
+              </label>
+            </div>
+  
+            <div class="medium-12 cell">
+              <label>Quantity
+                <input type="number" placeholder="Enter quanity">
+              </label>
+            </div>
+            <div class="medium-12 cell">
+              <label>Category
+                <select>
+                  <option value="husker">Electronic</option>
+                  <option value="starbuck">Clothing</option>
+                  <option value="hotdog">Furniture</option>
+                </select>
+              </label>
+            </div>
+  
+  
+            <div class="medium-12 cell">
+              <button type="submit" class="success button expanded">Save</button>
+            </div>
+          
+          </div>
+        </form>
+          </div>
+          </div>
+  </div>
+
+  <div class="reveal" id="productDetailModal" data-reveal>
+    <h1>Awesome. I Have It.</h1>
+    <p class="lead">Your couch. It is mine.</p>
+    <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
+    <button class="close-button" data-close aria-label="Close modal" type="button">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <script>
+    $(document).ready(function () {
+      $(document).foundation();
+
+    })
+  </script>
+</body>
+
+</html>

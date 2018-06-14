@@ -2,6 +2,8 @@ body {
   background-color: #456773; }
   body .appcontent {
     background-color: #656345; }
+    body .appcontent a {
+      margin: 0 auto; }
     body .appcontent button {
       border-radius: 12;
       border-bottom: Blue;
